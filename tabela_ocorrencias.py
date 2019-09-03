@@ -1,4 +1,4 @@
-import math
+import math, os
 
 def main():
 	print("Digite o numero de medicoes que deseja analisar: ", end="")
@@ -6,9 +6,8 @@ def main():
 	n = int(input())
 
 	dados = [0 for i in range(n)]
-	maximo = -10000
-	intervalos = [0 for i in range(math.ceil(math.sqrt(n)) + 1)]
-	j = 0
+	maximo = -math.inf
+	intervalos = []
 
 	print("Entre com os dados:")
 
@@ -16,30 +15,33 @@ def main():
 		a = float(input())
 		dados[i] = a
 	    
-	print("Voce deseja criar os intervalos automaticamente? (Y, n): ", end ="")
+	print("Criar os intervalos automaticamente? (Y, n): ", end ="")
 
 	opcao = input()
 
-	print("Qual a quantidade de casas decimais dos intervalos?: ", end="")
+	print("Quantidade de casas decimais dos intervalos: ", end="")
 
 	casas_decimais = int(input())
 
 	if opcao.lower() == "y":
-		intervalo.gerar_intervalo(dados, intervalos, casas_decimais)
+		tamanho_intervalo = intervalo.gerar_intervalo(dados, intervalos, casas_decimais)
 
 	elif opcao.lower() == "n":
 		print("Digite os intervalos que serao analisados (min max): ")
 
 		while maximo <= max(dados):
 			minimo, maximo = map(float, input().split())
-			intervalos[j] = intervalo.criar_intervalo(minimo, maximo)
-			j += 1
+			intervalos.append(intervalo.criar_intervalo(minimo, maximo))
 
 	else:
 		print("Comando invalido. Os intervalos serao gerados automaticamente.")
-		intervalo.gerar_intervalo(dados, intervalos, casas_decimais)
+		tamanho_intervalo = intervalo.gerar_intervalo(dados, intervalos, casas_decimais)
 
 	contador(dados, intervalos)
+
+	print("Tamanho dos intervalos\t:", round(tamanho_intervalo, casas_decimais))
+	print("Valor minimo\t\t:", min(dados))
+	print("Valor maximo\t\t:", max(dados))
 
 class intervalo:
 	def __init__(self, minimo, maximo, ocorrencias=0):
@@ -56,10 +58,11 @@ class intervalo:
 
 		tamanho_intervalo = round((maximo - minimo) / math.sqrt(len(dados)), casas_decimais)
 
-		for i in range(len(intervalos)):
-			intervalos[i] = intervalo.criar_intervalo(minimo, minimo + tamanho_intervalo)
-
+		while minimo <= maximo:
+			intervalos.append(intervalo.criar_intervalo(minimo, minimo + tamanho_intervalo))
 			minimo += tamanho_intervalo
+
+		return tamanho_intervalo
 
 def contador(dados, intervalos):
 	for i in range(len(intervalos)):
@@ -71,6 +74,10 @@ def contador(dados, intervalos):
 
 		frequencia_relativa = ocorrencias / (len(dados))
 		
-		print("Ocorrencias do intervalo [%.4f - %.4f): %d\t|Frequencia relativa: %.2f" %(intervalos[i].minimo, intervalos[i].maximo, ocorrencias, frequencia_relativa))
+		if i == 0:
+			os.system("clear")
+			print("\t\t\t**TABELA DE OCORRENCIAS**")
+
+		print("Ocorrencias no intervalo [%.4f - %.4f): %d\t| Frequencia relativa: %.2f" %(intervalos[i].minimo, intervalos[i].maximo, ocorrencias, frequencia_relativa))
 
 main()
