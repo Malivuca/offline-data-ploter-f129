@@ -1,7 +1,8 @@
 # Tabela de Ocorrencias
 
 Script para criar uma tabela de ocorrencias para disciplina de F129 da Unicamp.
-Previsão para criação de histogramas :): 26/09
+
+Previsão para criação de histogramas: 26/09 :)
 
 # Como usar:
 
