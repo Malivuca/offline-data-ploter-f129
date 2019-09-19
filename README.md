@@ -1,6 +1,7 @@
 # Tabela de Ocorrencias
 
-Script para criar uma tabela de ocorrencias para disciplina de F129 da Unicamp
+Script para criar uma tabela de ocorrencias para disciplina de F129 da Unicamp.
+Previsão para criação de histogramas :): 26/09
 
 # Como usar:
 
@@ -11,7 +12,7 @@ Prerequisito: python3 (para instalação, use: sudo apt-get install python3)
 
 1: Baixe os arquivos desse repositório para seu computador.
 
-2: Vá para o diretório onde os arquivos estão, (extraia os arquivos, se necessário).
+2: Vá para o diretório onde os arquivos estão (extraia os arquivos, se necessário).
 
 3: Execute a seguinte linha em seu terminal:
 
