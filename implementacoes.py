@@ -80,7 +80,7 @@ def tabela_ocorrencias(dados, intervalos, casas_decimais):
 	for i in range(len(intervalos)):
 		if i == 0:
 			os.system("clear")
-			print("\t\t\t**TABELA DE OCORRENCIAS**")
+			print("\t\t\t*******TABELA DE OCORRENCIAS*******")
 
 		if i != len(intervalos) - 1:
 			print("Ocorrencias no intervalo [{} - {}): {}\t| Frequencia relativa: {:.2f}".format(round(intervalos[i].minimo, casas_decimais), round(intervalos[i].maximo, casas_decimais), intervalos[i].ocorrencias, intervalos[i].frequencia_relativa))
