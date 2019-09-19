@@ -30,18 +30,10 @@ no segundo semestre de 2019 na Unicamp.
 
 # Instalações:
 
-python3:
+python3: sudo apt-get install python3
 
-sudo apt-get install python3
+pip: sudo apt-get install python3-pip
 
-pip:
+numpy: pip3 install numpy
 
-sudo apt-get install python3-pip
-
-numpy:
-
-pip3 install numpy
-
-matplotlib:
-
-pip3 install matplotlib
+matplotlib: pip3 install matplotlib
