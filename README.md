@@ -17,7 +17,7 @@ Prerequisitos: python3, pip, numpy, matplotlib (ver sessão de instalações)
 
 3: Execute a seguinte linha em seu terminal:
 
-# python3 tabela_ocorrencias.py
+python3 tabela_ocorrencias.py
 
 4: A partir desse momento, você deve seguir os passos mostrados na tela de seu terminal.
 
