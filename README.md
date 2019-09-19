@@ -9,7 +9,7 @@ Previsão para criação de histogramas: 26/09 :)
 Note que este tutorial é voltado para usuários de distribuições do Linux,
 portanto algumas passagens podem ser diferentes caso você use outro SO.
 
-Prerequisitos: python3, numpy (ver sessão de instalações)
+Prerequisitos: python3, pip, numpy, matplotlib (ver sessão de instalações)
 
 1: Baixe os arquivos desse repositório para seu computador.
 
@@ -34,22 +34,14 @@ python3:
 
 sudo apt-get install python3
 
+pip:
+
+sudo apt-get install python3-pip
+
 numpy:
 
-Instalação via pip:
+pip3 install numpy
 
-python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+matplotlib:
 
-Instalação via gerenciador de arquivos:
-
-(Ubuntu e Debian):
-
-sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
-
-(Fedora):
-
-sudo dnf install numpy scipy python-matplotlib ipython python-pandas sympy python-nose atlas-devel
-
-(MAC):
-
-sudo port install py35-numpy py35-scipy py35-matplotlib py35-ipython +notebook py35-pandas py35-sympy py35-nose
+pip3 install matplotlib
