@@ -1,83 +1,68 @@
-import math, os
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+import implementacoes as lib
 
 def main():
-	print("Digite o numero de medicoes que deseja analisar: ", end="")
+	n = int(input("Digite o numero de medicoes que deseja analisar: "))
 
-	n = int(input())
-
-	dados = [0 for i in range(n)]
-	maximo = -math.inf
-	intervalos = []
+	dados = [0 for i in range(n)] # Vetor para os dados
 
 	print("Entre com os dados:")
 
 	for i in range(n):
-		a = float(input())
-		dados[i] = a
+		dado = float(input())
+
+		dados[i] = dado
 	    
-	print("Criar os intervalos automaticamente? (Y, n): ", end ="")
+	opcao = input("Criar os intervalos automaticamente? (Y, n): ")
 
-	opcao = input()
-
-	print("Quantidade de casas decimais dos intervalos: ", end="")
-
-	casas_decimais = int(input())
+	casas_decimais = int(input("Quantidade de casas decimais dos intervalos: "))
 
 	if opcao.lower() == "y":
-		tamanho_intervalo = intervalo.gerar_intervalo(dados, intervalos, casas_decimais)
+		intervalos = lib.intervalo.gerar_intervalos(dados, casas_decimais)
 
 	elif opcao.lower() == "n":
-		print("Digite os intervalos que serao analisados (min max): ")
+		maximo_dados = max(dados)
+		maximo = -math.inf
+		intervalos = []
 
-		while maximo <= max(dados):
+
+		print("Digite os intervalos no formato \"min max\", sem as aspas: ")
+
+		while maximo <= maximo_dados:
 			minimo, maximo = map(float, input().split())
-			intervalos.append(intervalo.criar_intervalo(minimo, maximo))
+
+			intervalos.append(lib.intervalo.criar_intervalo(minimo, maximo))
+
+		lib.intervalo.gerar_ocorrencias_e_frequencia_relativa(dados, intervalos)
 
 	else:
 		print("Comando invalido. Os intervalos serao gerados automaticamente.")
+
 		tamanho_intervalo = intervalo.gerar_intervalo(dados, intervalos, casas_decimais)
 
-	contador(dados, intervalos)
+	lib.tabela_ocorrencias(dados, intervalos, casas_decimais)
 
-	print("Tamanho dos intervalos\t:", round(tamanho_intervalo, casas_decimais))
-	print("Valor minimo\t\t:", min(dados))
-	print("Valor maximo\t\t:", max(dados))
+def plotar_histograma(valor_medio, desvio_padrao, ):
+	"""# Fixing random state for reproducibility
+	np.random.seed(19680801)
 
-class intervalo:
-	def __init__(self, minimo, maximo, ocorrencias=0):
-		self.minimo = minimo
-		self.maximo = maximo
-		self.ocorrencias = ocorrencias
+	mu, sigma = 100, 15
+	x = mu + sigma * np.random.randn(10000)
 
-	def criar_intervalo(minimo, maximo):
-		return intervalo(minimo, maximo)
+	# the histogram of the data
+	n, bins, patches = plt.hist(x, 50, normed=1, facecolor='g', alpha=0.75)
 
-	def gerar_intervalo(dados, intervalos, casas_decimais):
-		minimo = min(dados)
-		maximo = max(dados)
 
-		tamanho_intervalo = round((maximo - minimo) / math.sqrt(len(dados)), casas_decimais)
+	plt.xlabel('Smarts')
+	plt.ylabel('Probability')
+	plt.title('Histogram of IQ')
+	plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
+	plt.axis([40, 160, 0, 0.03])
+	plt.grid(True)
+	plt.show()"""
 
-		while minimo <= maximo:
-			intervalos.append(intervalo.criar_intervalo(minimo, minimo + tamanho_intervalo))
-			minimo += tamanho_intervalo
-
-		return tamanho_intervalo
-
-def contador(dados, intervalos):
-	for i in range(len(intervalos)):
-		ocorrencias = 0
-
-		for j in range(len(dados)):
-			if intervalos[i].minimo <= dados[j] < intervalos[i].maximo:
-				ocorrencias += 1
-
-		frequencia_relativa = ocorrencias / (len(dados))
-		
-		if i == 0:
-			os.system("clear")
-			print("\t\t\t**TABELA DE OCORRENCIAS**")
-
-		print("Ocorrencias no intervalo [%.4f - %.4f): %d\t| Frequencia relativa: %.2f" %(intervalos[i].minimo, intervalos[i].maximo, ocorrencias, frequencia_relativa))
+	n, bins, patches = plt.hist()
 
 main()
