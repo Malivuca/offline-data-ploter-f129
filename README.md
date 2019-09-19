@@ -9,7 +9,7 @@ Previsão para criação de histogramas: 26/09 :)
 Note que este tutorial é voltado para usuários de distribuições do Linux,
 portanto algumas passagens podem ser diferentes caso você use outro SO.
 
-Prerequisito: python3 (para instalação, use: sudo apt-get install python3)
+Prerequisitos: python3, pip, numpy, matplotlib (ver sessão de instalações)
 
 1: Baixe os arquivos desse repositório para seu computador.
 
@@ -17,7 +17,7 @@ Prerequisito: python3 (para instalação, use: sudo apt-get install python3)
 
 3: Execute a seguinte linha em seu terminal:
 
-# python3 tabela_ocorrencias.py
+python3 tabela_ocorrencias.py
 
 4: A partir desse momento, você deve seguir os passos mostrados na tela de seu terminal.
 
@@ -27,3 +27,13 @@ O formato dos dados de entrada podem ser vistos nos arquivos "dados.txt" e "inte
 
 A tabela de ocorrências é gerada de acordo com as recomendações da disciplina F129 ministrada
 no segundo semestre de 2019 na Unicamp.
+
+# Instalações:
+
+python3: sudo apt-get install python3
+
+pip: sudo apt-get install python3-pip
+
+numpy: pip3 install numpy
+
+matplotlib: pip3 install matplotlib
