@@ -23,7 +23,7 @@ python3 tabela_ocorrencias.py
 
 # Observações:
 
-O formato dos dados de entrada podem ser vistos nos arquivos "dados.txt" e "intervalos.txt".
+Exemplos dos dados de entrada podem ser vistos na pasta "Exemplos de Entrada".
 
 A tabela de ocorrências é gerada de acordo com as recomendações da disciplina F129 ministrada
 no segundo semestre de 2019 na Unicamp.
