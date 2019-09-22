@@ -43,6 +43,10 @@ def main():
 
 	lib.tabela_ocorrencias(dados, intervalos, casas_decimais)
 
-	hs.plotar_tabela(intervalos, casas_decimais)
+	valor_medio = lib.get_valor_medio(dados)
+	desvio_padrao = lib.get_desvio_padrao(dados, valor_medio)
+	incerteza_padrao = lib.get_incerteza_padrao(desvio_padrao, len(dados))
+
+	hs.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao)
 
 main()

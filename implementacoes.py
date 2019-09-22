@@ -42,7 +42,7 @@ class intervalo:
 		tamanho_intervalo = round((maximo - minimo) / math.sqrt(len(dados)), casas_decimais)
 
 		while minimo <= maximo:
-			intervalos.append(intervalo.criar_intervalo(minimo, minimo + tamanho_intervalo, tamanho_intervalo))
+			intervalos.append(intervalo.criar_intervalo(round(minimo, casas_decimais), round(minimo + tamanho_intervalo, casas_decimais), tamanho_intervalo))
 
 			minimo += tamanho_intervalo
 

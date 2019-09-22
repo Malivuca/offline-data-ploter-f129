@@ -1,7 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
-
 
 def plotar_histograma(valor_medio, desvio_padrao):
 	"""# Fixing random state for reproducibility
@@ -24,30 +22,67 @@ def plotar_histograma(valor_medio, desvio_padrao):
 
 	n, bins, patches = plt.hist()
 
-def plotar_tabela(intervalos, casas_decimais):
+def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao):
 	data = [[intervalos[i].ocorrencias, intervalos[i].frequencia_relativa] for i in range(len(intervalos))]
 
-	rows = ["[%f - %f)" %(round(intervalos[i].minimo, casas_decimais), round(intervalos[i].maximo, casas_decimais)) for i in range(len(intervalos))]
+	data.append(["{}".format(round(valor_medio, casas_decimais)), ""])
+	data.append(["{}".format(round(desvio_padrao, casas_decimais)), ""])
+	data.append(["{}".format(round(incerteza_padrao, casas_decimais)), ""])
+
+	#plt.title(label="Tabela de Ocorrências", loc='center')
+
+	rows = ["[{} - {})".format(intervalos[i].minimo, intervalos[i].maximo) for i in range(len(intervalos))]
+
+	rows[-1] = rows[-1].replace(")", "]")
+
+	rows.append("Valor médio")
+	rows.append("Desvio-padrão")
+	rows.append("Incerteza padrão")
+
 	columns = ["Ocorrências", "Frequêcia Relativa"]
 
-	colors = plt.cm.BuPu(np.linspace(0, 0.5, len(rows)))
+	fig, axs = plt.subplots(dpi=110)
 
-	fig, axs = plt.subplots()
+	axs.axis('off')
+
+	#axs.title(label="Tabela de Ocorrências", loc='center')
+	fig.patch.set_visible(False)
+
+
 
 	table = axs.table(cellText=data,
 					  cellLoc="center",
 					  rowLabels=rows,
 					  rowLoc="center",
 					  colLabels=columns,
-					  colLoc="center",
-					  edges="closed")
-	
-	axs.axis('off')
-	axs.axis('tight')
-	"""
+					  colWidths=[0.25, 0.25],
+					  loc="center")
 
-	#rowColors=colors, cellColours=colors,
-	
+
+	cellDict = table.get_celld()
+
+	table.auto_set_font_size(False)
+
+	table.set_fontsize(18)
+
+	plt.show()
+
+	"""
+	for i in range(0,len(columns)):
+	    cellDict[(0,i)].set_height(0.05)
+	    for j in range(1,len(data)+1):
+	        cellDict[(j,i)].set_height(.05)
+
+	table.scale(1, 1)
+
+	plt.subplots_adjust(top=1.5)
+	plt.subplots_adjust(bottom=0.8)
+	plt.subplots_adjust(right=0.8)
+	plt.subplots_adjust(left=0.35)
+	==
+	axs.set_position(pos=[0.35, 0.5, 0.6, 0.6])
+
+	colors = plt.cm.BuPu(np.linspace(0, 0.5, len(rows)))
 
 	fig, axs = plt.subplots()
 
@@ -55,12 +90,13 @@ def plotar_tabela(intervalos, casas_decimais):
 	axs.axis('off')
 	axs.axis('tight')
 
+	Panda:
+
 	df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
 
 	seila = axs.table(cellText=df.values, colLabels=df.columns, loc='center')	
 
 	seila.set_fontsize(32)
 
-	fig.tight_layout()"""
-
-	plt.show()
+	fig.tight_layout()
+	"""
