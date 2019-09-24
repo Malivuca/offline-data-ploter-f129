@@ -9,16 +9,16 @@ Previsão para criação de histogramas: 26/09 :)
 Note que este tutorial é voltado para usuários de distribuições do Linux,
 portanto algumas passagens podem ser diferentes caso você use outro SO.
 
-Prerequisitos: python3, pip, numpy, matplotlib, plotly (ver sessão de instalações)
+Prerequisitos: `python3`, `pip`, `numpy`, `matplotlib`, `plotly` (ver sessão de instalações)
 
 1: Baixe os arquivos desse repositório para seu computador.
 
 2: Vá para o diretório onde os arquivos estão (extraia os arquivos, se necessário).
 
 3: Execute a seguinte linha em seu terminal:
-
-python3 tabela_ocorrencias.py
-
+```bash
+$ python3 tabela_ocorrencias.py
+```
 4: A partir desse momento, você deve seguir os passos mostrados na tela de seu terminal.
 
 ## Observações:
@@ -74,11 +74,10 @@ Apos configurar o npm, use o seguinte comando para instalar a api orca:
 ```bash
 $ npm install -g electron@1.8.4 orca
 ```
-### O que eh o arquivo Bashrc:
+### Bashrc:
 
-Aqui esta uma breve [definicao](https://unix.stackexchange.com/questions/129143/what-is-the-purpose-of-bashrc-and-how-does-it-work) do que eh o arquivo bashrc:
-
-Como acessa-lo:
+Para acessa-lo, digite em seu terminal:
 ```bash
-$ seu_editor_de_texto ~/.bashrc
+$ "seu_editor_de_texto" ~/.bashrc
 ```
+Se voce nao souber o que eh o arquivo bashrc e quiser ter uma nocao basica de seus usos, acesse [este link](https://www.maketecheasier.com/what-is-bashrc/) e descubra!
