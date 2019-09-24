@@ -1,8 +1,11 @@
 import math
 import implementacoes as lib
 import histogram as hs
+import os
 
 def main():
+	local = input("Ola! Voce esta executando este programa no IC? (Y, n): ")
+
 	n = int(input("Digite o numero de medicoes que deseja analisar: "))
 
 	dados = [0 for i in range(n)] # Vetor para os dados
@@ -47,6 +50,6 @@ def main():
 	desvio_padrao = lib.get_desvio_padrao(dados, valor_medio)
 	incerteza_padrao = lib.get_incerteza_padrao(desvio_padrao, len(dados))
 
-	hs.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao)
+	hs.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local)
 
 main()

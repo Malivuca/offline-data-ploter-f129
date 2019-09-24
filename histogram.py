@@ -1,6 +1,8 @@
 import numpy as np
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import plotly.graph_objects as go
+import plotly
+import os
 
 # Função criar_intervalos:
 # Parâmetros: Todos atributos da classe intervalo.
@@ -27,36 +29,73 @@ def plotar_histograma(valor_medio, desvio_padrao):
 
 	n, bins, patches = plt.hist()
 
-# ----------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------- -----------------------
 # Função criar_intervalos:
 # Parâmetros: Todos atributos da classe intervalo.
 # Inicializa uma variável do tipo intervalo como os parametros dados.
 
-def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao):
-	data = [[intervalos[i].ocorrencias, intervalos[i].frequencia_relativa] for i in range(len(intervalos))]
+def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local):
+	if local.lower() == "y":
+		plotly.io.orca.config.executable = os.path.expanduser("~") + "/.npm-packages/bin/orca"
 
-	data.append(["{}".format(round(valor_medio, casas_decimais)), ""])
-	data.append(["{}".format(round(desvio_padrao, casas_decimais)), ""])
-	data.append(["{}".format(round(incerteza_padrao, casas_decimais)), ""])
+	ocorrencias = [intervalos[i].ocorrencias for i in range(len(intervalos))]
+	frequencia_relativa = [intervalos[i].frequencia_relativa for i in range(len(intervalos))]
 
-	#plt.title(label="Tabela de Ocorrências", loc='center')
+	ocorrencias.append(["{}".format(round(valor_medio, casas_decimais))])
+	ocorrencias.append(["{}".format(round(desvio_padrao, casas_decimais))])
+	ocorrencias.append(["{}".format(round(incerteza_padrao, casas_decimais))])
 
-	rows = ["[{} - {})".format(intervalos[i].minimo, intervalos[i].maximo) for i in range(len(intervalos))]
+	row_labels = ["[{} - {})".format(intervalos[i].minimo, intervalos[i].maximo) for i in range(len(intervalos))]
 
-	rows[-1] = rows[-1].replace(")", "]")
+	row_labels[-1] = row_labels[-1].replace(")", "]")
 
-	rows.append("Valor médio")
-	rows.append("Desvio-padrão")
-	rows.append("Incerteza padrão")
+	row_labels.append("Valor médio")
+	row_labels.append("Desvio-padrão")
+	row_labels.append("Incerteza padrão")
 
-	columns = ["Ocorrências", "Frequêcia Relativa"]
+	column_labels = ["Intervalos", "Ocorrências", "Frequêcia Relativa"]
 
 	# Plotting table with plotly
 
-	fig = go.Figure(data=[go.Table(header=dict(values=['A Scores', 'B Scores']),
-					cells=dict(values=[[100, 90, 80, 90], [95, 85, 75, 95]]))])
+	header_color = "grey"
+	row_even_color = "lightgrey"
+	row_odd_color = "white"
 
-	fig.show()
+	fig = go.Figure(data=[go.Table(
+		columnorder=[1, 2, 3],
+		columnwidth=[56, 40, 50],
+		header=dict(
+			values=column_labels,
+			line_color="black",
+			fill_color=header_color,
+			align=["left", "center"],
+			font=dict(color="black", size=12)
+			),
+		cells=dict(
+			values=[row_labels, ocorrencias, frequencia_relativa],
+			line_color="black",
+			fill_color=[[row_even_color if i % 2 == 0 else row_odd_color for i in range(len(intervalos) + 3)] * (len(intervalos) + 3)],
+			align = ["left", "center"],
+			font=dict(color="black", size=14),
+			height=25
+			)
+		)])
+
+	#fig.show()
+
+	if not os.path.exists("images"):
+		os.mkdir("images")
+
+	for i in range(1, 1001):
+		if os.path.exists("images/tabela_de_ocorrencias.png"):
+			if not os.path.exists("images/tabela_de_ocorrencias(%d).png" % i):
+				fig.write_image("images/tabela_de_ocorrencias(%d).png" % i, format="png", width=600, height=600, scale=2)
+				break
+		else:
+			fig.write_image("images/tabela_de_ocorrencias.png", format="png", width=600, height=600, scale=2)
+			break
+
+	#fig.write_image("images/fig3.jpeg", format="jpeg", width=1280, height=720, scale=3)
 
 
 	"""
