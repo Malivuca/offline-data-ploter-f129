@@ -9,17 +9,17 @@ Previsão para criação de histogramas: 26/09 :)
 Note que este tutorial é voltado para usuários de distribuições do Linux,
 portanto algumas passagens podem ser diferentes caso você use outro SO.
 
-Prerequisitos: `python3`, `pip`, `numpy`, `matplotlib`, `plotly` (ver sessão de instalações)
+Pré-requisitos: `python3`, `pip`, `numpy`, `matplotlib`, `plotly` (ver sessão de instalações)
 
-1: Baixe os arquivos desse repositório para seu computador.
+1. Baixe os arquivos desse repositório para seu computador.
 
-2: Vá para o diretório onde os arquivos estão (extraia os arquivos, se necessário).
+2. Vá para o diretório onde os arquivos estão (extraia os arquivos, se necessário).
 
-3: Execute a seguinte linha em seu terminal:
+3. Execute a seguinte linha em seu terminal:
 ```bash
 $ python3 tabela_ocorrencias.py
 ```
-4: A partir desse momento, você deve seguir os passos mostrados na tela de seu terminal.
+4. A partir desse momento, você deve seguir os passos mostrados na tela de seu terminal.
 
 ## Observações:
 
