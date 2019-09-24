@@ -55,10 +55,11 @@ $ pip3 install plotly
 ```
 ### Fedora (no lab do IC3):
 
-No lab do IC, `python3`, pip, numpy e matplotlib ja estao instalados, portanto bastar instalar o plotly.
-Devemos utilizar a flag --user no final do comando pip, pois nao temos permissao de administrador.
+No lab do IC, `python3`, `pip`, `numpy` e `matplotlib` ja estao instalados, portanto bastar instalar o `plotly`
+e a api `orca`.
+Devemos utilizar a flag `--user` no final do comando `pip`, pois nao temos permissao de administrador.
 
-plotly: $ python3 -m pip install plotly --user
+plotly: `$ python3 -m pip install plotly --user`
 
 Para criar a imagem com a tabela, voce precisara da api orca. Para instalar essa api, primeiramente
 vamos ter que configurar o packet manager do IC. Para isso, digite os seguintes comandos em seu terminal:
