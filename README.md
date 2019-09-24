@@ -4,7 +4,7 @@ Script para criar uma tabela de ocorrencias para disciplina de F129 da Unicamp.
 
 Previsão para criação de histogramas: 26/09 :)
 
-# Como usar:
+## Como usar:
 
 Note que este tutorial é voltado para usuários de distribuições do Linux,
 portanto algumas passagens podem ser diferentes caso você use outro SO.
@@ -21,16 +21,16 @@ python3 tabela_ocorrencias.py
 
 4: A partir desse momento, você deve seguir os passos mostrados na tela de seu terminal.
 
-# Observações:
+## Observações:
 
 Exemplos dos dados de entrada podem ser vistos na pasta "Exemplos de Entrada".
 
 A tabela de ocorrências é gerada de acordo com as recomendações da disciplina F129 ministrada
 no segundo semestre de 2019 na Unicamp.
 
-# Instalações:
+## Instalações:
 
-# Ubuntu (Debian):
+### Ubuntu (Debian):
 
 Python3:
 
@@ -52,7 +52,7 @@ plotly:
 
 $ pip3 install plotly
 
-# Fedora (no lab do IC3):
+### Fedora (no lab do IC3):
 
 No lab do IC, python3, pip, numpy e matplotlib ja estao instalados, portanto bastar instalar o plotly.
 Devemos utilizar a flag --user no final do comando pip, pois nao temos permissao de administrador.
@@ -63,6 +63,20 @@ Para criar a imagem com a tabela, voce precisara da api orca. Para instalar essa
 vamos ter que configurar o packet manager do IC. Para isso, siga as instrucoes desse site:
 
 https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+
+mkdir "${HOME}/.npm-packages"
+
+npm config set prefix "${HOME}/.npm-packages"
+
+Abra seu arquivo bashrc e adicione as seguintes linhas:
+
+NPM_PACKAGES="${HOME}/.npm-packages"
+
+export PATH="$PATH:$NPM_PACKAGES/bin"
+
+\# Preserve MANPATH if you already defined it somewhere in your config.
+\# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 Apos configurar o npm, use o seguinte comando para instalar a api orca:
 
