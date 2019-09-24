@@ -32,34 +32,23 @@ no segundo semestre de 2019 na Unicamp.
 
 ### Ubuntu (Debian):
 
-Python3:
+Python3:`$ sudo apt-get install python3`
 
-$ sudo apt-get install python3
+pip:`$ sudo apt-get install python3-pip`
 
-pip: 
+numpy:`$ pip3 install numpy`
 
-$ sudo apt-get install python3-pip
+matplotlib:`$ pip3 install matplotlib`
 
-numpy:
+plotly:`$ pip3 install plotly`
 
-$ pip3 install numpy
-
-matplotlib:
-
-$ pip3 install matplotlib
-
-plotly:
-
-```bash
-$ pip3 install plotly
-```
 ### Fedora (no lab do IC3):
 
 No lab do IC, `python3`, `pip`, `numpy` e `matplotlib` ja estao instalados, portanto bastar instalar o `plotly`
 e a api `orca`.
 Devemos utilizar a flag `--user` no final do comando `pip`, pois nao temos permissao de administrador.
 
-plotly: `$ python3 -m pip install plotly --user`
+plotly:`$ python3 -m pip install plotly --user`
 
 Para criar a imagem com a tabela, voce precisara da api orca. Para instalar essa api, primeiramente
 vamos ter que configurar o packet manager do IC. Para isso, digite os seguintes comandos em seu terminal:
