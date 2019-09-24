@@ -1,5 +1,10 @@
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+
+# Função criar_intervalos:
+# Parâmetros: Todos atributos da classe intervalo.
+# Inicializa uma variável do tipo intervalo como os parametros dados.
 
 def plotar_histograma(valor_medio, desvio_padrao):
 	"""# Fixing random state for reproducibility
@@ -22,6 +27,11 @@ def plotar_histograma(valor_medio, desvio_padrao):
 
 	n, bins, patches = plt.hist()
 
+# ----------------------------------------------------------------------------------------------------------
+# Função criar_intervalos:
+# Parâmetros: Todos atributos da classe intervalo.
+# Inicializa uma variável do tipo intervalo como os parametros dados.
+
 def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao):
 	data = [[intervalos[i].ocorrencias, intervalos[i].frequencia_relativa] for i in range(len(intervalos))]
 
@@ -41,14 +51,22 @@ def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incert
 
 	columns = ["Ocorrências", "Frequêcia Relativa"]
 
-	fig, axs = plt.subplots(dpi=110)
+	# Plotting table with plotly
+
+	fig = go.Figure(data=[go.Table(header=dict(values=['A Scores', 'B Scores']),
+					cells=dict(values=[[100, 90, 80, 90], [95, 85, 75, 95]]))])
+
+	fig.show()
+
+
+	"""
+	Plotting with matplotlib:
+
+	fig, axs = plt.subplots(dpi=100)
 
 	axs.axis('off')
 
-	#axs.title(label="Tabela de Ocorrências", loc='center')
 	fig.patch.set_visible(False)
-
-
 
 	table = axs.table(cellText=data,
 					  cellLoc="center",
@@ -67,7 +85,8 @@ def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incert
 
 	plt.show()
 
-	"""
+	Additional matplotlib commands:
+
 	for i in range(0,len(columns)):
 	    cellDict[(0,i)].set_height(0.05)
 	    for j in range(1,len(data)+1):
@@ -83,20 +102,4 @@ def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incert
 	axs.set_position(pos=[0.35, 0.5, 0.6, 0.6])
 
 	colors = plt.cm.BuPu(np.linspace(0, 0.5, len(rows)))
-
-	fig, axs = plt.subplots()
-
-	fig.patch.set_visible(False)
-	axs.axis('off')
-	axs.axis('tight')
-
-	Panda:
-
-	df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
-
-	seila = axs.table(cellText=df.values, colLabels=df.columns, loc='center')	
-
-	seila.set_fontsize(32)
-
-	fig.tight_layout()
 	"""
