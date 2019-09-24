@@ -30,21 +30,40 @@ no segundo semestre de 2019 na Unicamp.
 
 # Instalações:
 
-Ubuntu (Debian):
+# Ubuntu (Debian):
 
-python3: sudo apt-get install python3
+Python3:
 
-pip: sudo apt-get install python3-pip
+$ sudo apt-get install python3
 
-numpy: pip3 install numpy
+pip: 
 
-matplotlib: pip3 install matplotlib
+$ sudo apt-get install python3-pip
 
-plotly: pip3 install plotly
+numpy:
 
-Fedora (no lab do IC3):
+$ pip3 install numpy
 
-No lab do IC, python3, pip, numpy e matplotlib ja estao instalados, portanto bastar instalar o plotly:
+matplotlib:
+
+$ pip3 install matplotlib
+
+plotly:
+
+$ pip3 install plotly
+
+# Fedora (no lab do IC3):
+
+No lab do IC, python3, pip, numpy e matplotlib ja estao instalados, portanto bastar instalar o plotly.
 Devemos utilizar a flag --user no final do comando pip, pois nao temos permissao de administrador.
 
-plotly: python3 -m pip install plotly --user
+plotly: $ python3 -m pip install plotly --user
+
+Para criar a imagem com a tabela, voce precisara da api orca. Para instalar essa api, primeiramente
+vamos ter que configurar o packet manager do IC. Para isso, siga as instrucoes desse site:
+
+https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+
+Apos configurar o npm, use o seguinte comando para instalar a api orca:
+
+$ npm install -g electron@1.8.4 orca
