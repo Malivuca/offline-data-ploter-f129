@@ -59,7 +59,6 @@ $ mkdir "${HOME}/.npm-packages"
 $ npm config set prefix "${HOME}/.npm-packages"
 ```
 Agora abra seu o arquivo bashrc com seu editor de texto favorito e adicione as seguintes linhas:
-(Nao sabe o que eh o arquivo bashrc? Descubra o que ele eh, e como acessa-lo na proxima secao!)
 ```bash
 NPM_PACKAGES="${HOME}/.npm-packages"
 
@@ -69,6 +68,8 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 \# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 ```
+
+> Nao sabe o que eh o arquivo bashrc? Descubra o que ele eh e como acessa-lo na proxima secao!
 
 Apos configurar o npm, use o seguinte comando para instalar a api orca:
 ```bash
