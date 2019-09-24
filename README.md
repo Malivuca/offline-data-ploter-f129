@@ -9,7 +9,7 @@ Previsão para criação de histogramas: 26/09 :)
 Note que este tutorial é voltado para usuários de distribuições do Linux,
 portanto algumas passagens podem ser diferentes caso você use outro SO.
 
-Pré-requisitos: `python3`, `pip`, `numpy`, `matplotlib`, `plotly` (ver sessão de instalações)
+Pré-requisitos: `python3`, `pip`, `numpy`, `matplotlib`, `plotly` (ver seção de instalações)
 
 1. Baixe os arquivos desse repositório para seu computador.
 
@@ -42,23 +42,23 @@ matplotlib: `$ pip3 install matplotlib`
 
 plotly: `$ pip3 install plotly`
 
-### Fedora (no lab do IC3):
+### Fedora (nos computadores do IC):
 
-No lab do IC, `python3`, `pip`, `numpy` e `matplotlib` ja estao instalados, portanto bastar instalar o `plotly`
-e a api `orca`.
-Devemos utilizar a flag `--user` no final do comando `pip`, pois nao temos permissao de administrador.
+No lab do IC, `python3`, `pip`, `numpy` e `matplotlib` já estão instalados, portanto bastar instalar as
+bibliotecas `plotly` e `orca`.
+Devemos utilizar a *flag* `--user` no final do comando `pip`, pois não temos permissão de administrador no IC.
 
 plotly: `$ python3 -m pip install plotly --user`
 
-Para criar a imagem com a tabela, voce precisara da api orca. Para instalar essa api, primeiramente
-vamos ter que configurar o packet manager do IC. Para isso, digite os seguintes comandos em seu terminal:
+Para criar a imagem com a tabela, você precisará da api orca. Para instalar essa api, primeiramente
+vamos ter que configurar o *packet manager* `npm` do IC. Para isso, digite os seguintes comandos em seu terminal:
 ```bash
 $ mkdir "${HOME}/.npm-packages"
 ```
 ```bash
 $ npm config set prefix "${HOME}/.npm-packages"
 ```
-Agora abra seu o arquivo bashrc com seu editor de texto favorito e adicione as seguintes linhas:
+Agora abra seu o arquivo `.bashrc` com seu editor de texto favorito e adicione as seguintes linhas:
 ```bash
 NPM_PACKAGES="${HOME}/.npm-packages"
 
@@ -69,16 +69,16 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 ```
 
-> Nao sabe o que eh o arquivo bashrc? Descubra o que ele eh e como acessa-lo na proxima secao!
+> Não sabe o que é o arquivo `.bashrc`? Descubra o que ele é e como acessá-lo na próxima seção!
 
-Apos configurar o npm, use o seguinte comando para instalar a api orca:
+Após configurar o `npm`, use o seguinte comando para instalar a api orca:
 ```bash
 $ npm install -g electron@1.8.4 orca
 ```
 ### Bashrc:
 
-Para acessa-lo, digite em seu terminal:
+Para acessá-lo, digite em seu terminal:
 ```bash
 $ "seu_editor_de_texto" ~/.bashrc
 ```
-Se voce nao souber o que eh o arquivo bashrc e quiser ter uma nocao basica de seus usos, acesse [este link](https://www.maketecheasier.com/what-is-bashrc/) e descubra!
+Se você não souber o que é o arquivo `.bashrc` e quiser ter uma noção básica de seus usos, acesse [este link](https://www.maketecheasier.com/what-is-bashrc/) e descubra!
