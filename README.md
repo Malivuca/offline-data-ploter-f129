@@ -9,7 +9,7 @@ Previsão para criação de histogramas: 26/09 :)
 Note que este tutorial é voltado para usuários de distribuições do Linux,
 portanto algumas passagens podem ser diferentes caso você use outro SO.
 
-Prerequisitos: python3, pip, numpy, matplotlib (ver sessão de instalações)
+Prerequisitos: python3, pip, numpy, matplotlib, plotly (ver sessão de instalações)
 
 1: Baixe os arquivos desse repositório para seu computador.
 
@@ -30,6 +30,7 @@ no segundo semestre de 2019 na Unicamp.
 
 # Instalações:
 
+Ubuntu (Debian):
 python3: sudo apt-get install python3
 
 pip: sudo apt-get install python3-pip
@@ -37,3 +38,11 @@ pip: sudo apt-get install python3-pip
 numpy: pip3 install numpy
 
 matplotlib: pip3 install matplotlib
+
+plotly: pip3 install plotly
+
+Fedora (no lab do IC3):
+No lab do IC, python3, pip, numpy e matplotlib ja estao instalados, portanto bastar instalar o plotly:
+Devemos utilizar a flag --user no final do comando pip, pois nao temos permissao de administrador.
+
+plotly: python3 -m pip install plotly --user
