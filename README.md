@@ -52,14 +52,15 @@ plotly: `$ python3 -m pip install plotly --user`
 
 Para criar a imagem com a tabela, voce precisara da api orca. Para instalar essa api, primeiramente
 vamos ter que configurar o packet manager do IC. Para isso, digite os seguintes comandos em seu terminal:
-
+```bash
 $ mkdir "${HOME}/.npm-packages"
-
+```
+```bash
 $ npm config set prefix "${HOME}/.npm-packages"
-
+```
 Agora abra seu o arquivo bashrc com seu editor de texto favorito e adicione as seguintes linhas:
-(Nao sabe o que eh o arquivo bashrc? Veja como acessa-lo na sessao bashrc)
-
+(Nao sabe o que eh o arquivo bashrc? Descubra o que ele eh, e como acessa-lo na proxima secao!)
+```bash
 NPM_PACKAGES="${HOME}/.npm-packages"
 
 export PATH="$PATH:$NPM_PACKAGES/bin"
@@ -67,6 +68,7 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 \# Preserve MANPATH if you already defined it somewhere in your config.
 \# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+```
 
 Apos configurar o npm, use o seguinte comando para instalar a api orca:
 ```bash
@@ -74,11 +76,7 @@ $ npm install -g electron@1.8.4 orca
 ```
 ### O que eh o arquivo Bashrc:
 
-Aqui esta uma breve definicao do que eh o arquivo bashrc:
-
-`.bashrc` is a shell script that Bash runs whenever it is started interactively. It initializes an interactive shell session. You can put any command in that file that you could type at the command prompt.
-
-You put commands here to set up the shell for use in your particular environment, or to customize things to your preferences. A common thing to put in `.bashrc` are aliases that you want to always be available.
+Aqui esta uma breve [definicao](https://unix.stackexchange.com/questions/129143/what-is-the-purpose-of-bashrc-and-how-does-it-work) do que eh o arquivo bashrc:
 
 Como acessa-lo:
 ```bash
