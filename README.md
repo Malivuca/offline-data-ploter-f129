@@ -55,7 +55,7 @@ $ pip3 install plotly
 ```
 ### Fedora (no lab do IC3):
 
-No lab do IC, python3, pip, numpy e matplotlib ja estao instalados, portanto bastar instalar o plotly.
+No lab do IC, `python3`, pip, numpy e matplotlib ja estao instalados, portanto bastar instalar o plotly.
 Devemos utilizar a flag --user no final do comando pip, pois nao temos permissao de administrador.
 
 plotly: $ python3 -m pip install plotly --user
