@@ -16,6 +16,9 @@ def main():
 		dado = float(input())
 
 		dados[i] = dado
+
+	valor_maximo = max(dados)
+	valor_minimo = min(dados)
 	    
 	opcao = input("Criar os intervalos automaticamente? (Y, n): ")
 
@@ -25,14 +28,13 @@ def main():
 		intervalos = lib.intervalo.gerar_intervalos(dados, casas_decimais)
 
 	elif opcao.lower() == "n":
-		maximo_dados = max(dados)
 		maximo = -math.inf
 		intervalos = []
 
 
 		print("Digite os intervalos no formato \"min max\", sem as aspas: ")
 
-		while maximo <= maximo_dados:
+		while maximo <= valor_maximo:
 			minimo, maximo = map(float, input().split())
 
 			intervalos.append(lib.intervalo.criar_intervalo(minimo, maximo))
@@ -44,12 +46,21 @@ def main():
 
 		tamanho_intervalo = intervalo.gerar_intervalo(dados, intervalos, casas_decimais)
 
-	lib.tabela_ocorrencias(dados, intervalos, casas_decimais)
-
 	valor_medio = lib.get_valor_medio(dados)
 	desvio_padrao = lib.get_desvio_padrao(dados, valor_medio)
 	incerteza_padrao = lib.get_incerteza_padrao(desvio_padrao, len(dados))
 
-	hs.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local)
+	lib.tabela_ocorrencias(dados, intervalos, casas_decimais)
+
+	try:
+		hs.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local)
+	
+		hs.plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, len(dados), local)
+
+		print("As imagens do histograma e da tabela de ocorrencias estao no diretorio images!")
+
+	except:
+		print("Ocorreu um erro inesperado durante a criacao das imagens :/")
+		print("Voce pode tentar editar o codigo ou contatar o criador deste codigo atraves do e-mail: m242096@dac.unicamp.br")
 
 main()

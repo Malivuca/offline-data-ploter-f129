@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
+import plotly.express as px
 import plotly
 import os
 
@@ -8,26 +9,59 @@ import os
 # Parâmetros: Todos atributos da classe intervalo.
 # Inicializa uma variável do tipo intervalo como os parametros dados.
 
-def plotar_histograma(valor_medio, desvio_padrao):
-	"""# Fixing random state for reproducibility
-	np.random.seed(19680801)
+def plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, n_dados, local):
+	if local.lower() == "y":
+		plotly.io.orca.config.executable = os.path.expanduser("~") + "/.npm-packages/bin/orca"
 
-	mu, sigma = 100, 15
-	x = mu + sigma * np.random.randn(10000)
+	x0 = dados
 
-	# the histogram of the data
-	n, bins, patches = plt.hist(x, 50, normed=1, facecolor='g', alpha=0.75)
+	fig = go.Figure()
+	fig.add_trace(go.Histogram(
+	    x=x0,
+	    histnorm='percent',
+	    name='control', # name used in legend and hover labels
+	    xbins=dict( # bins used for histogram
+	        start=valor_minimo,
+	        end=valor_maximo,
+	        size=intervalos[0].tamanho
+	    ),
+	    marker_color='#EB89B5',
+	    opacity=0.75
+	))
+	"""fig.add_trace(go.Histogram(
+	    x=x1,
+	    histnorm='percent',
+	    name='experimental',
+	    xbins=dict(
+	        start=0,
+	        end=2,
+	        size=0.5
+	    ),
+	    marker_color='#330C73',
+	    opacity=0.75
+	))
+	"""
 
+	fig.update_layout(
+	    title_text='Histograma de Ocorrências', # title of plot
+	    xaxis_title_text='Intervalos', # xaxis label
+	    yaxis_title_text='Ocorrências', # yaxis label
+	    bargap=0.2, # gap between bars of adjacent location coordinates
+	    bargroupgap=0.1 # gap between bars of the same location coordinates
+	)
 
-	plt.xlabel('Smarts')
-	plt.ylabel('Probability')
-	plt.title('Histogram of IQ')
-	plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
-	plt.axis([40, 160, 0, 0.03])
-	plt.grid(True)
-	plt.show()"""
+	#fig.show()
+	if not os.path.exists("images"):
+		os.mkdir("images")
 
-	n, bins, patches = plt.hist()
+	for i in range(1, 1001):
+		if os.path.exists("images/histograma.png"):
+			if not os.path.exists("images/histograma(%d).png" % i):
+				fig.write_image("images/histograma(%d).png" % i, format="png", width=600, height=600, scale=2)
+				break
+		else:
+			fig.write_image("images/histograma.png", format="png", width=600, height=600, scale=2)
+			break
 
 # ----------------------------------------------------------------------------------- -----------------------
 # Função criar_intervalos:
