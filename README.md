@@ -16,11 +16,23 @@ Pré-requisitos: `python3`, `pip`, `pandas`, `plotly`, `orca` (ver seção de in
 
 2. Vá para o diretório onde os arquivos estão (extraia os arquivos, se necessário).
 
-3. Execute a seguinte linha em seu terminal:
+3. Crie um arquivo de texto com seus dados experimentais no fomato:
+```bash
+0.131
+0.543
+0.513
+0.120
+0.230
+```
+4. Execute a seguinte linha em seu terminal:
 ```bash
 $ python3 tabela_ocorrencias.py
 ```
-4. A partir desse momento, você deve seguir os passos mostrados na tela de seu terminal.
+5. A partir desse momento, você deve seguir os passos mostrados na tela de seu terminal.
+Quando os dados experimentais forem solicitados, copie os dados do arquivo texto que você criou
+no item 3 e cole no terminal :D.
+6. Sua tabela de ocorrências e histograma estarão no diretório `images`. Você  já pode passá-los direto
+para seu relatório de F129!!
 
 ## Instalações:
 
