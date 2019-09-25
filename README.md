@@ -3,7 +3,7 @@
 Esse script cria automaticamente uma representação gráfica de uma tabela de ocorrências e
 de um histograma com base nos seus dados experimentais!
 
-![Tabela de Ocorrencias](https://raw.githubusercontent.com/Malivuca/tabela_ocorrencaisf129/blob/master/exemplos_de_entrada/tabela_de_ocorrencias.png)
+![alt text](https://raw.githubusercontent.com/Malivuca/tabela_ocorrencaisf129/master/exemplos_de_entrada/tabela_de_ocorrencias.png)
 
 Previsão para criação de histogramas: 26/09 :)
 
