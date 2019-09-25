@@ -81,6 +81,7 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 ```
 > Lembre-se de usar o comando `source ~/.bashrc` para as mudanças no arquivo `.bashrc` tomarem efeito!
+
 Após configurar o `npm`, use o seguinte comando para instalar a api orca:
 ```bash
 $ npm install -g electron@1.8.4 orca
