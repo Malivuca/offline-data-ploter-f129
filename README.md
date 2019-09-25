@@ -4,6 +4,7 @@ Esse script cria automaticamente uma representação gráfica de uma tabela de o
 de um histograma com base nos seus dados experimentais!
 
 ![Tabela de Ocorrências](https://raw.githubusercontent.com/Malivuca/tabela_ocorrenciasf129/master/exemplos_de_entrada/tabela_de_ocorrencias.png)
+![Histograma](https://raw.githubusercontent.com/Malivuca/tabela_ocorrenciasf129/master/exemplos_de_entrada/histograma.png)
 
 Previsão para criação de histogramas: 26/09 :)
 
