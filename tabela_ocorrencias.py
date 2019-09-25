@@ -52,15 +52,15 @@ def main():
 
 	lib.tabela_ocorrencias(dados, intervalos, casas_decimais)
 
-	try:
-		hs.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local)
+	#try:
+	hs.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local)
 	
-		hs.plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, len(dados), local)
+	hs.plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, len(dados), local)
 
-		print("As imagens do histograma e da tabela de ocorrencias estao no diretorio images!")
+	print("As imagens do histograma e da tabela de ocorrencias estao no diretorio images!")
 
-	except:
-		print("Ocorreu um erro inesperado durante a criacao das imagens :/")
-		print("Voce pode tentar editar o codigo ou contatar o criador deste codigo atraves do e-mail: m242096@dac.unicamp.br")
+	#except:
+	#print("Ocorreu um erro inesperado durante a criacao das imagens :/")
+	#print("Voce pode tentar editar o codigo ou contatar o criador deste codigo atraves do e-mail: m242096@dac.unicamp.br")
 
 main()
