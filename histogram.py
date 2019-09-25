@@ -13,20 +13,18 @@ def plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, n_dados, lo
 	if local.lower() == "y":
 		plotly.io.orca.config.executable = os.path.expanduser("~") + "/.npm-packages/bin/orca"
 
-	x0 = dados
-
 	fig = go.Figure()
 	fig.add_trace(go.Histogram(
-	    x=x0,
+	    x=dados,
 	    histnorm='percent',
-	    name='control', # name used in legend and hover labels
+	    name='Lançamentos da esfera de aço', # name used in legend and hover labels
 	    xbins=dict( # bins used for histogram
 	        start=valor_minimo,
 	        end=valor_maximo,
 	        size=intervalos[0].tamanho
 	    ),
 	    marker_color='#EB89B5',
-	    opacity=0.75
+	    opacity=1.0
 	))
 	"""fig.add_trace(go.Histogram(
 	    x=x1,

@@ -1,4 +1,4 @@
-import math, os
+import math
 
 # Classe intervalo:
 # A classe intervalo define um intervalo do tipo [minimo, maximo), (i.e., do minimo incluso, até
@@ -86,7 +86,6 @@ class intervalo:
 def tabela_ocorrencias(dados, intervalos, casas_decimais):
 	for i in range(len(intervalos)):
 		if i == 0:
-			os.system("clear")
 			print("\t************TABELA DE OCORRÊNCIAS************")
 
 		if i != len(intervalos) - 1:
