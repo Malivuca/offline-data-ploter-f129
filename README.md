@@ -60,7 +60,7 @@ Devemos utilizar a *flag* `--user` no final do comando `pip`, pois não temos pe
 
 plotly: `$ python3 -m pip install plotly --user`
 
-Para criar a imagem com a tabela, você precisará da api orca. Para instalar essa api, primeiramente
+Para criar a imagem com a tabela, você precisará da api `orca`. Para instalar essa api, primeiramente
 vamos ter que configurar o *packet manager* `npm` do IC. Para isso, digite os seguintes comandos em seu terminal:
 ```bash
 $ mkdir "${HOME}/.npm-packages"
@@ -83,17 +83,18 @@ export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 ```
 > Lembre-se de usar o comando `source ~/.bashrc` para as mudanças no arquivo `.bashrc` tomarem efeito!
 
-Após configurar o `npm`, use o seguinte comando para instalar a api orca:
+Finalmente, use o seguinte comando para instalar a api `orca`:
 ```bash
 $ npm install -g electron@1.8.4 orca
 ```
 ### Bashrc:
 
+Se você não souber o que é o arquivo `.bashrc` e quiser ter uma noção básica de seus usos, acesse [este link](https://www.maketecheasier.com/what-is-bashrc/) e descubra!
+
 Para acessá-lo, digite em seu terminal:
 ```bash
 $ <seu_editor_de_texto> ~/.bashrc
 ```
-Se você não souber o que é o arquivo `.bashrc` e quiser ter uma noção básica de seus usos, acesse [este link](https://www.maketecheasier.com/what-is-bashrc/) e descubra!
 
 ## Observações:
 
