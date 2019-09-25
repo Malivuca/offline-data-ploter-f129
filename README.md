@@ -1,4 +1,4 @@
-# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tabela de Ocorrências
+# Tabela de Ocorrências
 
 Script para criar uma tabela de ocorrências para disciplina de F129 da Unicamp.
 
