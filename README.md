@@ -1,6 +1,7 @@
-# Tabela de Ocorrências
+# Criador de  tabela de ocorrências e histograma
 
-Script para criar uma tabela de ocorrências para disciplina de F129 da Unicamp.
+Esse script cria automaticamente uma representação gráfica de uma tabela de ocorrências e
+de um histograma com base nos seus dados experimentais!
 
 Previsão para criação de histogramas: 26/09 :)
 
