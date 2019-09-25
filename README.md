@@ -41,7 +41,7 @@ psutil: `$ pip install psutil`
 2. Navegue para o diretório onde está o executável do Miniconda e digite a seguinte linha em seu terminal:
 > Substitua `<executavel_miniconda.sh>` pelo nome do executável do Miniconda
 ```bash
-$ sudo chmod -x <executavel_miniconda.sh>
+$ sudo chmod +x <executavel_miniconda.sh>
 ```
 3. Execute o instalador do Miniconda: `./<executavel_miniconda.sh>`
 4. Após instalar o Miniconda, feche a janela de seu terminal e abra-a novamente.
