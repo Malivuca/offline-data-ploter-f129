@@ -50,17 +50,24 @@ def main():
 	desvio_padrao = lib.get_desvio_padrao(dados, valor_medio)
 	incerteza_padrao = lib.get_incerteza_padrao(desvio_padrao, len(dados))
 
-	lib.tabela_ocorrencias(dados, intervalos, casas_decimais)
-
 	#try:
-	hs.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local)
-	
 	hs.plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, len(dados), local)
 
-	print("As imagens do histograma e da tabela de ocorrencias estao no diretorio images!")
+	hs.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local)
+
+	os.system("clear")
+
+	lib.tabela_ocorrencias(dados, intervalos, casas_decimais)
+
+	print_separator()
+
+	print("As imagens do histograma e da tabela de ocorrencias estao no diretorio imagens!")
 
 	#except:
 	#print("Ocorreu um erro inesperado durante a criacao das imagens :/")
 	#print("Voce pode tentar editar o codigo ou contatar o criador deste codigo atraves do e-mail: m242096@dac.unicamp.br")
+
+def print_separator():
+	print("---------------------------------------------------------------")
 
 main()
