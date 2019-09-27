@@ -30,7 +30,7 @@ psutil: `$ pip install psutil`
 
 #### Orca:
 
-1. Siga [este link](https://docs.conda.io/en/latest/miniconda.html) e baixe o pacote Miniconda para `python3` de acordo com seu SO e arquitetura.
+1. Siga [este link](https://docs.conda.io/en/latest/miniconda.html) e baixe o pacote Miniconda para `python3` de acordo com seu S.O. e arquitetura.
 2. Navegue para o diretório onde está o executável do Miniconda e digite a seguinte linha em seu terminal:
 > Substitua `<executavel_miniconda.sh>` pelo nome do executável do Miniconda
 ```bash
