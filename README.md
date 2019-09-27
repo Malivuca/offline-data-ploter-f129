@@ -12,7 +12,7 @@ de um histograma fornecendo apenas os seus dados experimentais!
 
 Para rodar o `offline_data_plotter`, você precisará de ter instalado em seu computdador: `python3`, `pip`, `pandas`, `plotly` e `orca`.
 
-Não se preocupe, pois basta você seguir os passos abaixo relacionados ao seu sistema operacional (S.O.).
+Não se preocupe, pois basta você seguir os passos abaixo de acordo com seu sistema operacional (S.O.).
 Note, porém, que esta seção de instalações é voltada apenas para usuários de distribuições do Linux,
 portanto algumas passagens podem ser diferentes caso você use outro S.O..
 
@@ -38,7 +38,7 @@ $ sudo chmod +x <executavel_miniconda.sh>
 ```
 3. Execute o instalador do Miniconda: `./<executavel_miniconda.sh>`
 4. Após instalar o Miniconda, feche a janela de seu terminal e abra-a novamente.
-5. Finalmente, para instalar a A.P.I. orca, digite a seguinte linha em seu terminal:
+5. Finalmente, para instalar a A.P.I. `orca`, digite a seguinte linha em seu terminal:
 ```bash
 $ conda install -c plotly plotly-orca
 ```
@@ -75,7 +75,7 @@ export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 ```
 > Lembre-se de usar o comando `source ~/.bashrc` para as mudanças no arquivo `.bashrc` tomarem efeito!
 
-Finalmente, use o seguinte comando para instalar a api `orca`:
+Finalmente, use o seguinte comando para instalar a A.P.I. `orca`:
 ```bash
 $ npm install -g electron@1.8.4 orca
 ```
