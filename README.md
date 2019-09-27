@@ -1,8 +1,8 @@
-# Offline Data Ploter!
+# Offline Data Plotter!
 
-### Cansado de usar o `Online Data Ploter` do IFGW?? Você veio pro lugar certo!
+### Cansado de usar o `Online Data Plotter` do IFGW?? Você veio pro lugar certo!
 
-Com o `offline_data_ploter`, você cria automaticamente uma representação gráfica de uma tabela de ocorrências e
+Com o `offline_data_plotter`, você cria automaticamente uma representação gráfica de uma tabela de ocorrências e
 de um histograma fornecendo apenas os seus dados experimentais!
 
 ![Tabela de Ocorrências](https://raw.githubusercontent.com/Malivuca/offline-data-ploter-f129/master/exemplos/Exemplo_de_tabela_de_ocorrencias.jpg)
@@ -10,7 +10,7 @@ de um histograma fornecendo apenas os seus dados experimentais!
 
 ## Instalações:
 
-Para rodar o `offline_data_ploter`, você precisará de ter instalado em seu computdador: `python3`, `pip`, `pandas`, `plotly` e `orca`.
+Para rodar o `offline_data_plotter`, você precisará de ter instalado em seu computdador: `python3`, `pip`, `pandas`, `plotly` e `orca`.
 
 Não se preocupe, pois basta você seguir os passos abaixo relacionados ao seu sistema operacional (S.O.).
 Note, porém, que esta seção de instalações é voltada apenas para usuários de distribuições do Linux,
@@ -100,7 +100,7 @@ Pré-requisitos: `python3`, `pip`, `pandas`, `plotly`, `orca` (ver seção de in
 
 4. Execute a seguinte linha em seu terminal:
 ```bash
-$ python3 offline_data_ploter.py
+$ python3 offline_data_plotter.py
 ```
 5. A partir desse momento, você deve seguir os passos mostrados na tela de seu terminal.
 Quando os dados experimentais forem solicitados, copie os dados do arquivo texto que você criou
