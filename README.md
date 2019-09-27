@@ -119,7 +119,7 @@ $ <seu_editor_de_texto> ~/.bashrc
 
 ## Observações:
 
-Exemplos do formato de entrada podem ser vistos na pasta "exemplos".
+Exemplos do formato de entrada podem ser vistos na pasta `exemplos`.
 
 A tabela de ocorrências é gerada de acordo com as recomendações da disciplina F129 ministrada
 no segundo semestre de 2019 na Unicamp.
