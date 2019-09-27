@@ -42,7 +42,13 @@ class intervalo:
 		tamanho_intervalo = round((maximo - minimo) / math.sqrt(len(dados)), casas_decimais)
 
 		while minimo <= maximo:
-			intervalos.append(intervalo.criar_intervalo(round(minimo, casas_decimais), round(minimo + tamanho_intervalo, casas_decimais), tamanho_intervalo))
+			intervalos.append(\
+				intervalo.criar_intervalo(\
+					round(minimo, casas_decimais),\
+					round(minimo + tamanho_intervalo, casas_decimais),\
+					tamanho_intervalo\
+					)\
+				)
 
 			minimo += tamanho_intervalo
 
@@ -89,15 +95,31 @@ def tabela_ocorrencias(dados, intervalos, casas_decimais):
 			print("\t************TABELA DE OCORRÊNCIAS************")
 
 		if i != len(intervalos) - 1:
-			print("Ocorrências no intervalo [{} - {}): {}\t| Frequência relativa: {:.2f}".format(round(intervalos[i].minimo, casas_decimais), round(intervalos[i].maximo, casas_decimais), intervalos[i].ocorrencias, intervalos[i].frequencia_relativa))
+			print(\
+				("Ocorrências no intervalo [{:." + str(casas_decimais) + "f} - {:." + str(casas_decimais) + "f}): {}" +\
+					"\t| Frequência relativa: {:.2f}").format(\
+					round(intervalos[i].minimo, casas_decimais),\
+					round(intervalos[i].maximo, casas_decimais),\
+					intervalos[i].ocorrencias,\
+					intervalos[i].frequencia_relativa\
+				)\
+			)
 		
 		else:
-			print("Ocorrências no intervalo [{} - {}]: {}\t| Frequência relativa: {:.2f}".format(round(intervalos[i].minimo, casas_decimais), round(intervalos[i].maximo, casas_decimais), intervalos[i].ocorrencias, intervalos[i].frequencia_relativa))
+			print(\
+				("Ocorrências no intervalo [{:." + str(casas_decimais) + "f} - {:." + str(casas_decimais) + "f}]: {}" +\
+					"\t| Frequência relativa: {:.2f}").format(\
+					round(intervalos[i].minimo, casas_decimais),\
+					round(intervalos[i].maximo, casas_decimais),\
+					intervalos[i].ocorrencias,\
+					intervalos[i].frequencia_relativa\
+				)\
+			)
 
 	valor_maximo = max(dados)
-	valor_medio = get_valor_medio(dados)
-	desvio_padrao = get_desvio_padrao(dados, valor_medio)
-	incerteza_padrao = get_incerteza_padrao(desvio_padrao, len(dados))
+	valor_medio = round(get_valor_medio(dados), casas_decimais)
+	desvio_padrao = round(get_desvio_padrao(dados, valor_medio), casas_decimais)
+	incerteza_padrao = round(get_incerteza_padrao(desvio_padrao, len(dados)), casas_decimais)
 
 	if intervalos[0].tamanho != 0:
 		print("Tamanho dos intervalos\t:", round(intervalos[i].tamanho, casas_decimais))
@@ -106,9 +128,9 @@ def tabela_ocorrencias(dados, intervalos, casas_decimais):
 
 	print("Valor mínimo\t\t:", intervalos[0].minimo)
 	print("Valor máximo\t\t:", valor_maximo)
-	print("Valor médio\t\t:", round(valor_medio, casas_decimais))
-	print("Desvio-padrão\t\t:", round(desvio_padrao, casas_decimais))
-	print("Incerteza padrão\t:", round(incerteza_padrao, casas_decimais))
+	print(("Valor médio\t\t: {:." + str(casas_decimais) + "f}").format(valor_medio))
+	print(("Desvio-padrão\t\t: {:." + str(casas_decimais) + "f}").format(desvio_padrao))
+	print(("Incerteza padrão\t: {:." + str(casas_decimais) + "f}").format(incerteza_padrao))
 
 # ----------------------------------------------------------------------------------------------------------
 # Função get_valor_medio:

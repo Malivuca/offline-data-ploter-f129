@@ -93,12 +93,12 @@ def plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, n_dados, lo
 		os.mkdir("images")
 
 	for i in range(1, 1001):
-		if os.path.exists("images/histograma.png"):
-			if not os.path.exists("images/histograma(%d).png" % i):
-				fig.write_image("images/histograma(%d).png" % i, format="png", scale=2)
+		if os.path.exists("images/histograma.jpg"):
+			if not os.path.exists("images/histograma(%d).jpg" % i):
+				fig.write_image("images/histograma(%d).jpg" % i, format="jpeg", scale=2)
 				break
 		else:
-			fig.write_image("images/histograma.png", format="png", scale=2)
+			fig.write_image("images/histograma.jpg", format="jpeg", scale=2)
 			break
 
 		#time.sleep(0.2)
@@ -115,13 +115,17 @@ def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incert
 		orca.config.executable = os.path.expanduser("~") + "/.npm-packages/bin/orca"
 
 	ocorrencias = [intervalos[i].ocorrencias for i in range(len(intervalos))]
-	frequencia_relativa = [intervalos[i].frequencia_relativa for i in range(len(intervalos))]
+	frequencia_relativa = ["%.2f" %(intervalos[i].frequencia_relativa) for i in range(len(intervalos))]
 
-	ocorrencias.append(["{}".format(round(valor_medio, casas_decimais))])
-	ocorrencias.append(["{}".format(round(desvio_padrao, casas_decimais))])
-	ocorrencias.append(["{}".format(round(incerteza_padrao, casas_decimais))])
+	ocorrencias.append([("{:." + str(casas_decimais) + "f}").format(round(valor_medio, casas_decimais))])
+	ocorrencias.append([("{:." + str(casas_decimais) + "f}").format(round(desvio_padrao, casas_decimais))])
+	ocorrencias.append([("{:." + str(casas_decimais) + "f}").format(round(incerteza_padrao, casas_decimais))])
 
-	row_labels = ["[{} - {})".format(intervalos[i].minimo, intervalos[i].maximo) for i in range(len(intervalos))]
+	row_labels = [\
+		("[{:." + str(casas_decimais) + "f} - {:." + str(casas_decimais) + "f})").format(\
+			intervalos[i].minimo,\
+			intervalos[i].maximo) for i in range(len(intervalos))\
+		]
 
 	row_labels[-1] = row_labels[-1].replace(")", "]")
 
@@ -198,8 +202,8 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
     @params:
         iteration   - Required  : current iteration (Int)
         total       - Required  : total iterations (Int)
-        prefix      - Optional  : prefix string (Str)
-        suffix      - Optional  : suffix string (Str)
+        prefix      - Optional  : prefix string (Str) (Progress)
+        suffix      - Optional  : suffix string (Str) (% Complete)
         decimals    - Optional  : positive number of decimals in percent complete (Int)
         length      - Optional  : character length of bar (Int)
         fill        - Optional  : bar fill character (Str)
