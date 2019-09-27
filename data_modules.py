@@ -117,6 +117,7 @@ def tabela_ocorrencias(dados, intervalos, casas_decimais):
 			)
 
 	valor_maximo = max(dados)
+	valor_minimo = min(dados)
 	valor_medio = round(get_valor_medio(dados), casas_decimais)
 	desvio_padrao = round(get_desvio_padrao(dados, valor_medio), casas_decimais)
 	incerteza_padrao = round(get_incerteza_padrao(desvio_padrao, len(dados)), casas_decimais)
@@ -126,11 +127,11 @@ def tabela_ocorrencias(dados, intervalos, casas_decimais):
 	else:
 		print("Tamanho dos intervalos\t: Indefinido")
 
-	print("Valor mínimo\t\t:", intervalos[0].minimo)
+	print("Valor mínimo\t\t:", valor_minimo)
 	print("Valor máximo\t\t:", valor_maximo)
 	print(("Valor médio\t\t: {:." + str(casas_decimais) + "f}").format(valor_medio))
-	print(("Desvio-padrão\t\t: {:." + str(casas_decimais) + "f}").format(desvio_padrao))
-	print(("Incerteza padrão\t: {:." + str(casas_decimais) + "f}").format(incerteza_padrao))
+	print(("Desvio-padrão\t\t: {:.1}").format(desvio_padrao))
+	print(("Incerteza padrão\t: {:.1}").format(incerteza_padrao))
 
 # ----------------------------------------------------------------------------------------------------------
 # Função get_valor_medio:

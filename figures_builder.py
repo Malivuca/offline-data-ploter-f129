@@ -120,8 +120,8 @@ def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incert
 	frequencia_relativa = ["%.2f" %(intervalos[i].frequencia_relativa) for i in range(len(intervalos))]
 
 	ocorrencias.append([("{:." + str(casas_decimais) + "f}").format(round(valor_medio, casas_decimais))])
-	ocorrencias.append([("{:." + str(casas_decimais) + "f}").format(round(desvio_padrao, casas_decimais))])
-	ocorrencias.append([("{:." + str(casas_decimais) + "f}").format(round(incerteza_padrao, casas_decimais))])
+	ocorrencias.append([("{:.1}").format(round(desvio_padrao, casas_decimais))])
+	ocorrencias.append([("{:.1}").format(round(incerteza_padrao, casas_decimais))])
 
 	row_labels = [\
 		("[{:." + str(casas_decimais) + "f} - {:." + str(casas_decimais) + "f})").format(\
