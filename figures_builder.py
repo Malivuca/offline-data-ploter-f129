@@ -85,6 +85,8 @@ def plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, n_dados, lo
 		bargroupgap=0.0 # gap between bars of the same location coordinates
 	)
 
+	print("Criando histograma...")
+
 	#printProgressBar(0, 10, prefix = 'Progress:', suffix = 'Complete', length = 30)
 
 	#fig.show()
@@ -162,7 +164,7 @@ def plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incert
 		)])
 
 	#printProgressBar(0, 10, prefix = 'Progress:', suffix = 'Complete', length = 30)
-	print("Criando tabela de ocorrências...", end="\r")
+	print("Criando tabela de ocorrências...")
 	#fig.show()
 
 	fig.update_layout(
