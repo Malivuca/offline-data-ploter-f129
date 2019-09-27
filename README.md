@@ -10,8 +10,11 @@ de um histograma fornecendo apenas os seus dados experimentais!
 
 ## Instalações:
 
-Note que esta seção de instalações é voltada para usuários de distribuições do Linux,
-portanto algumas passagens podem ser diferentes caso você use outro SO.
+Para rodar o `offline_data_ploter`, você precisará de ter instalado em seu computdador `python3`, `pip`, `pandas`, `plotly` e `orca`.
+
+Não se preocupe, pois basta você seguir os passos abaixo relacionados ao seu sistema operacional (S.O.).
+Note, porém, que esta seção de instalações é voltada para usuários de distribuições do Linux,
+portanto algumas passagens podem ser diferentes caso você use outro S.O..
 
 ### Ubuntu (Debian):
 
