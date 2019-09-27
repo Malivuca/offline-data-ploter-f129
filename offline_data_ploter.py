@@ -61,7 +61,7 @@ def main():
 
 	print_separator()
 
-	print("As imagens do histograma e da tabela de ocorrencias estao no diretorio imagens!")
+	print("As imagens do histograma e da tabela de ocorrencias estao no diretorio \"images\"!")
 
 	#except:
 	#print("Ocorreu um erro inesperado durante a criacao das imagens :/")
