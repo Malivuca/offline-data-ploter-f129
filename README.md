@@ -5,8 +5,8 @@
 Com o `offline_data_ploter`, você cria automaticamente uma representação gráfica de uma tabela de ocorrências e
 de um histograma fornecendo apenas os seus dados experimentais!
 
-![Tabela de Ocorrências](https://raw.githubusercontent.com/Malivuca/tabela_ocorrenciasf129/master/exemplos/Exemplo_de_tabela_de_ocorrencias.jpg)
-![Histograma](https://raw.githubusercontent.com/Malivuca/tabela_ocorrenciasf129/master/exemplos/Exemplo_de_histograma.jpg)
+![Tabela de Ocorrências](https://raw.githubusercontent.com/Malivuca/offline-data-ploter-f129/master/exemplos/Exemplo_de_tabela_de_ocorrencias.jpg)
+![Histograma](https://raw.githubusercontent.com/Malivuca/offline-data-ploter-f129/master/exemplos/Exemplo_de_histograma.jpg)
 
 ## Instalações:
 
