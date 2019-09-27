@@ -96,6 +96,8 @@ Pré-requisitos: `python3`, `pip`, `pandas`, `plotly`, `orca` (ver seção de in
 0.120
 0.230
 ```
+> Exemplos de entrada podem ser encontrados na pasta `exemplos`.
+
 4. Execute a seguinte linha em seu terminal:
 ```bash
 $ python3 offline_data_ploter.py
@@ -117,7 +119,7 @@ $ <seu_editor_de_texto> ~/.bashrc
 
 ## Observações:
 
-Exemplos dos dados de entrada podem ser vistos na pasta "Exemplos de Entrada".
+Exemplos do formato de entrada podem ser vistos na pasta "exemplos".
 
 A tabela de ocorrências é gerada de acordo com as recomendações da disciplina F129 ministrada
 no segundo semestre de 2019 na Unicamp.
