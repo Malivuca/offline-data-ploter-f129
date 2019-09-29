@@ -18,6 +18,10 @@ def plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, n_dados, lo
 
 	print_separator()
 
+	label_x = input("Digite um nome para o \"eixo x\" do histograma: ")
+
+	print_separator()
+
 	print("Cores disponiveis:")
 
 	for i in range(len(colors)):
@@ -63,7 +67,7 @@ def plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, n_dados, lo
 	    #yaxis_title_text='Ocorrências', # yaxis label
 	    xaxis=go.layout.XAxis(
         	title=go.layout.xaxis.Title(
-            	text="Tempo de queda (s)",
+            	text=label_x,
             	font=dict(
                 	family="Times New Roman",
                 	size=18,

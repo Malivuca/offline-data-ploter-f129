@@ -53,7 +53,7 @@ def main():
 	#try:
 	fig.plotar_histograma(dados, intervalos, valor_minimo, valor_maximo, n, local)
 
-	fig.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local)
+	#fig.plotar_tabela(intervalos, casas_decimais, valor_medio, desvio_padrao, incerteza_padrao, local)
 
 	os.system("clear")
 
